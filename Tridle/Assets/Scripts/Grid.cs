@@ -2,15 +2,130 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid : MonoBehaviour {
+public class Grid
+{
+    private Tile[,] _grid;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Tile[,] Array
+    {
+        get { return _grid; }
+    }
+
+    public int Width
+    {
+        get { return _grid.GetLength(0); }
+    }
+
+    public int Height
+    {
+        get { return _grid.GetLength(1); }
+    }
+
+    public Tile this[int x, int y]
+    {
+        get { return GetNode(x, y); }
+        set { SetNode(value, x, y); }
+    }
+    public Tile this[Vector2Int pos]
+    {
+        get { return GetNode(pos); }
+        set { SetNode(value, pos); }
+    }
+
+    public Tile GetNode(Vector2Int node)
+    {
+        return GetNode(node.x, node.y);
+    }
+    public Tile GetNode(int x, int y)
+    {
+        if (x > Width - 1 || y > Height - 1 || x < 0 || y < 0)
+            return null;
+        return _grid[x, y];
+    }
+
+    public void SetNode(Tile newNode, Vector2Int node)
+    {
+        SetNode(newNode, (int)node.x, (int)node.y);
+    }
+    public void SetNode(Tile newNode, int x, int y)
+    {
+        if (x > Width - 1 || y > Height - 1 || x < 0 || y < 0) { return; }
+        _grid[x, y] = newNode;
+    }
+
+    public Vector2Int FindObject(Tile obj)
+    {
+        for (int x = 0; x < Array.GetLength(0); x++)
+        {
+            for (int y = 0; y < Array.GetLength(1); y++)
+            {
+                if (GetNode(x, y) == obj)
+                    return new Vector2Int(x, y);
+            }
+        }
+        return new Vector2Int(-1, -1);
+    }
+
+    public Vector2Int[] GetNeighboursPositions(int x, int y, bool crosswise = true)
+    {
+        return GetNeighboursPositions(new Vector2Int(x, y), crosswise);
+    }
+    public Vector2Int[] GetNeighboursPositions(Vector2Int nodePosition, bool crosswise = true)
+    {
+        List<Vector2Int> neighbours = new List<Vector2Int>();
+        for (int x = -1; x < 2; x++)
+        {
+            for (int y = -1; y < 2; y++)
+            {
+
+                if ((!crosswise && (y == 1 || y == -1) && (x == 1 || x == -1)) ||
+                    x == 0 && y == 0)
+                    continue;
+
+                var position = new Vector2Int(x, y) + nodePosition;
+
+                if (position.x > Width - 1 || position.y > Height - 1 || position.x < 0 || position.y < 0)
+                    continue;
+
+                neighbours.Add(position);
+            }
+        }
+        return neighbours.ToArray();
+
+    }
+
+    public Tile[] GetNeighbours(int x, int y, bool crosswise = true)
+    {
+        return GetNeighbours(new Vector2Int(x, y), crosswise);
+    }
+
+    public Tile[] GetNeighbours(Vector2Int nodePosition, bool crosswise = true)
+    {
+        List<Tile> neighbours = new List<Tile>();
+        var positions = GetNeighboursPositions(nodePosition, crosswise);
+        for (int i = 0; i < positions.Length; i++)
+        {
+            Tile temp = GetNode(positions[i]);
+            if (temp != null)
+            {
+                neighbours.Add(temp);
+            }
+        }
+        return neighbours.ToArray();
+
+    }
+
+    public void ReziseGrid(int x, int y)
+    {
+        _grid = new Tile[x, y];
+    }
+    public void ReziseGrid(Vector2Int size)
+    {
+        _grid = new Tile[size.x, size.y];
+    }
+
+    public Vector2Int FindPlaceable(IPlaceable placeable)
+    {
+
+    }
 }

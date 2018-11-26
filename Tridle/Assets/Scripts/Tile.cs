@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile : MonoBehaviour {
-
+public class Tile : MonoBehaviour
+{
+    public IPlaceable placeable;
 	// Use this for initialization
 	void Start () {
 		

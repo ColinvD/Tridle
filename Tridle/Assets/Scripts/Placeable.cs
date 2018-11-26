@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Placeable : MonoBehaviour {
+public abstract class Placeable : MonoBehaviour, IPlaceable
+{
+    private float speed;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Vector2Int GetLocation()
+    {
+        return new Vector2Int(0, 0);
+    }
+
+    public float GetSpeedMultiplier()
+    {
+        return speed;
+    }
 }
