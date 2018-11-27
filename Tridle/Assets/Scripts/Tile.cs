@@ -5,13 +5,25 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public IPlaceable placeable;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public float grass;
+    public IPlaceable z;
+    public IUpdateable x;
+    //Shrubbery
+
+    public Sprite[] sprites;
+
+    public float MoveDiviculty()
+    {
+        return 3;
+    }
+
+    public Vector2Int GetLocation()
+    {
+        return new Vector2Int(0, 0);
+    }
+
+    public void UpdateGrassGrow()
+    {
+
+    }
 }
