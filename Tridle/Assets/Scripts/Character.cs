@@ -25,7 +25,8 @@ public class Character : MonoBehaviour
     }
     public void PointToPointMove(Vector2Int loc)
     {
-
+        var openList = new List<Tile>();
+        var closedList = new List<Tile>();
     }
 
     public Tree FindClosestTree()
