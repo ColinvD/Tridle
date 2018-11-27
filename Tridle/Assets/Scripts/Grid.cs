@@ -115,17 +115,17 @@ public class Grid
 
     }
 
-    public void ReziseGrid(int x, int y)
+    public void ResizeGrid(int x, int y)
     {
         _grid = new Tile[x, y];
     }
-    public void ReziseGrid(Vector2Int size)
+    public void ResizeGrid(Vector2Int size)
     {
         _grid = new Tile[size.x, size.y];
     }
 
     public Vector2Int FindPlaceable(IPlaceable placeable)
     {
-
+        return new Vector2Int(0, 0);
     }
 }
