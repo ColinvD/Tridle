@@ -12,7 +12,7 @@ public class Tile : MonoBehaviour
 
     public Sprite[] sprites;
 
-    public float MoveDiviculty()
+    public float MoveDifficulty()
     {
         return 3;
     }
