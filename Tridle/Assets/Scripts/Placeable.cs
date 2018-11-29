@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Placeable : MonoBehaviour, IPlaceable
+public abstract class Placeable : IPlaceable
 {
     private float speed;
 

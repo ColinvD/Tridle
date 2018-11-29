@@ -4,9 +4,27 @@ using UnityEngine;
 
 public class Damageable : IDamageable
 {
-    public void Damage(float amount)
-    {
+    private float _health;
 
+    private ResourceType _resource;
+    private float _value;
+
+    public Damageable(float health, ResourceType resource, float value)
+    {
+        _value = value;
+        _resource = resource;
+        _health = health;
+    }
+
+    public bool Damage(float amount)
+    {
+        _health -= amount;
+        if(_health <= 0)
+        {
+            ResourceHandler.Instance.GetResource(_resource).Amount += _value;
+            //die
+        }
+        return true;
     }
 
     public float GetHealth()
