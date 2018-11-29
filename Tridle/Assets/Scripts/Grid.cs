@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -127,5 +127,21 @@ public class Grid
     public Vector2Int FindPlaceable(IPlaceable placeable)
     {
         return new Vector2Int(0, 0);
+    }
+
+    public void Reset()
+    {
+        for (var x = 0; x < Width; x++)
+        {
+            for (var y = 0; y < Height; y++)
+            {
+                _grid[x, y].Reset();
+            }
+        }
+    }
+
+    public List<Tile> FindPath(Vector2Int startPoint, Vector2Int endPoint, Func<Vector2, Vector2, float> heuristic = null)
+    {
+        return PathFinder.FindPath(startPoint, endPoint, this, heuristic);
     }
 }
