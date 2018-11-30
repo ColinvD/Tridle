@@ -6,6 +6,12 @@ public class Grid
 {
     private Tile[,] _grid;
 
+    public Grid(int x, int y)
+    {
+        _grid = new Tile[x, y];
+    }
+
+
     public Tile[,] Array
     {
         get { return _grid; }
@@ -129,7 +135,7 @@ public class Grid
         return new Vector2Int(0, 0);
     }
 
-    public void Reset()
+    public void ResetPath()
     {
         for (var x = 0; x < Width; x++)
         {

@@ -27,7 +27,7 @@ public static class PathFinder
         var closedList = new List<Tile>();
         var currentNode = grid.GetNode(startPoint);
 
-        grid.Reset();
+        grid.ResetPath();
 
         openList.Add(currentNode);
 
