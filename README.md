@@ -21,7 +21,7 @@ What do we want to reach with this project:
 | | Monday | Tuesday | Wednesday | Thursday | Friday |
 | --- | --- | --- | --- | --- | --- |
 |week 1 | Research engine & making a list of objects from the game | making Class diagram | making Class diagram | making Class diagram | finishing Class diagram & setup github |
-|week 2 | Setting up scripts from class diagram | Making the pathfinding script & making interfaces | Making the pathfinding script & making interfaces | Making the pathfinding script & making interfaces |  |
+|week 2 | Setting up scripts from class diagram | Making the pathfinding script & making interfaces | Making the pathfinding script & making interfaces | Making the pathfinding script & making interfaces | Making grid, character visable |
 
 ## Sources
 
