@@ -6,12 +6,14 @@ public class Grid : MonoBehaviour
 {
     [SerializeField]
     GameObject tilePrefab;
-
+    [SerializeField]
+    GameObject treePrefab;
     private Tile[,] _grid;
 
     public void Start()
     {
         ResizeGrid(10, 10);
+        _grid[4, 4].building = new Tree(10,10,Instantiate(treePrefab, new Vector3(4, 4, 0), Quaternion.identity));
     }
 
 

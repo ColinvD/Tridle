@@ -8,16 +8,20 @@ public class Building : IHarvestable
 
     private IHarvestable _harvestable;
 
-    private Sprite[] _sprite;
+    public GameObject placeholder;
 
-    public Building(IHarvestable ID, Sprite[] sprite)
+    public Building(IHarvestable ID)
     {
-        _sprite = sprite;
         _harvestable = ID;
     }
 
     public void Damage(float amount)
     {
         _harvestable.Damage(amount);
+    }
+
+    public bool AbleHarvest()
+    {
+        return _harvestable.AbleHarvest();
     }
 }

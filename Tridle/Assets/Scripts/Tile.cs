@@ -17,9 +17,19 @@ public class Tile : MonoBehaviour
     public float F { get; set; }
     public Tile Parent { get; set; }
 
+    private void Start()
+    {
+        grass = 0;
+    }
+
+    private void Update()
+    {
+        grass++;
+    }
+
     public float MoveDifficulty()
     {
-        return 3;
+        return 100000 + grass;
     }
 
     public Vector2Int GetLocation()

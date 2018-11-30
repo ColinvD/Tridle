@@ -6,8 +6,9 @@ public class Tree : Building
 {
 
 
-    public Tree(float health, float value) : base(new Harvestable(health), new Sprite[0])
+    public Tree(float health, float value, GameObject placeholder) : base(new Harvestable(health))
     {
+        base.placeholder = placeholder;
         Debug.Log("spawned a tree");
     }
 }

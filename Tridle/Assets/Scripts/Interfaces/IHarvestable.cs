@@ -6,4 +6,5 @@ using UnityEngine;
 public interface IHarvestable
 {
     void Damage(float amount);
+    bool AbleHarvest();
 }

@@ -19,4 +19,9 @@ public class Harvestable : IHarvestable
             //die
         }
     }
+    
+    public bool AbleHarvest()
+    {
+        return true;
+    }
 }

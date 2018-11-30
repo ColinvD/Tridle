@@ -25,6 +25,7 @@ public class Character : MonoBehaviour
     public void Start()
     {
         path = new Queue<Tile>();
+        walkSpeedTotal = 1;
     }
 
     /*public void PointToPointMove(Tree tree)
@@ -43,17 +44,25 @@ public class Character : MonoBehaviour
 
     private void Move()
     {
-        float moveSpeed = walkSpeedTotal * path.Peek().MoveDifficulty();
-        Vector2 direction = path.Peek().GetLocation() - location;
-        if (moveSpeed < direction.magnitude)
+        if(path.Count == 1 && path.Peek().building != null && path.Peek().building.AbleHarvest())
         {
-            direction.Normalize();
-            location += direction * moveSpeed;
+
         }
         else
         {
-            location = path.Peek().GetLocation();
-            path.Dequeue();
+            float moveSpeed = walkSpeedTotal / path.Peek().MoveDifficulty() * 1000;
+            Vector2 direction = path.Peek().GetLocation() - location;
+            if (moveSpeed < direction.magnitude)
+            {
+                direction.Normalize();
+                location += direction * moveSpeed;
+            }
+            else
+            {
+                location = path.Peek().GetLocation();
+                path.Dequeue();
+            }
+            gameObject.transform.position = location;
         }
     }
 

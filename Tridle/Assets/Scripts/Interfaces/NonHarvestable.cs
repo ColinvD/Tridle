@@ -8,4 +8,9 @@ public class NonHarvestable : IHarvestable
     {
 
     }
+    
+    public bool AbleHarvest()
+    {
+        return false;
+    }
 }

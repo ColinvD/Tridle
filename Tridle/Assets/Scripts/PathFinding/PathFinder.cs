@@ -49,7 +49,6 @@ public static class PathFinder
                 .Where(n => !closedList.Contains(n)))
             {
                 UpdateNodeValues(neighbour, currentNode, endPoint, heuristic);
-                
                 if (!openList.Contains(neighbour))
                 {
                     openList.Add(neighbour);
