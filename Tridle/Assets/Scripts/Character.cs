@@ -43,7 +43,6 @@ public class Character : MonoBehaviour
 
     private void Move()
     {
-        Debug.Log("Hello");
         float moveSpeed = walkSpeedTotal * path.Peek().MoveDifficulty();
         Vector2 direction = path.Peek().GetLocation() - location;
         if (moveSpeed < direction.magnitude)
@@ -62,7 +61,6 @@ public class Character : MonoBehaviour
     {
         if (path.Count != 0)
         {
-            Debug.Log("Boop");
             Move();
         }
     }
