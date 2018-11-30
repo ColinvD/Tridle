@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField]
     Grid grid;
 
     List<float> damageAdditive;
@@ -27,7 +28,9 @@ public class Character : MonoBehaviour
     }*/
     public void PointToPointMove(Vector2Int loc)
     {
+        Debug.Log(grid);
         path = new Queue<Tile>(grid.FindPath(Vector2Int.RoundToInt(location), loc, null));
+        Debug.Log(path);
     }
 
     /*public Tree FindClosestTree()

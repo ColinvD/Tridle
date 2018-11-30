@@ -113,6 +113,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &74502639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1633382049027812, guid: bd588b50114494246bb0c37ae2b692f0,
+    type: 2}
+  m_PrefabInternal: {fileID: 651229543}
+--- !u!114 &74502641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 74502639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4423493b58a0dce41a47aca751ce09a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  location: {x: 1, y: 1}
+  axeLevel: 0
 --- !u!1001 &651229543
 Prefab:
   m_ObjectHideFlags: 0
@@ -267,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a95da3a218a3f488ed4feaafdd9744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 1633382049027812, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
+  tilePrefab: {fileID: 1814239793113084, guid: 92190bc631e2c174db91b77b15f295ac, type: 2}
   width: 4
   height: 5
 --- !u!4 &1882131620
