@@ -8,14 +8,4 @@ public class NonHarvestable : IHarvestable
     {
 
     }
-
-    public float GetHealth()
-    {
-        return 0;
-    }
-
-    public float GetHealthFraction()
-    {
-        return 1;
-    }
 }
