@@ -22,15 +22,18 @@ public class Character : MonoBehaviour
     private Queue<Tile> path;
     private float walkSpeedTotal;
 
+    public void Start()
+    {
+        path = new Queue<Tile>();
+    }
+
     /*public void PointToPointMove(Tree tree)
     {
 
     }*/
     public void PointToPointMove(Vector2Int loc)
     {
-        Debug.Log(grid);
         path = new Queue<Tile>(grid.FindPath(Vector2Int.RoundToInt(location), loc, null));
-        Debug.Log(path);
     }
 
     /*public Tree FindClosestTree()
@@ -40,6 +43,7 @@ public class Character : MonoBehaviour
 
     private void Move()
     {
+        Debug.Log("Hello");
         float moveSpeed = walkSpeedTotal * path.Peek().MoveDifficulty();
         Vector2 direction = path.Peek().GetLocation() - location;
         if (moveSpeed < direction.magnitude)
@@ -58,6 +62,7 @@ public class Character : MonoBehaviour
     {
         if (path.Count != 0)
         {
+            Debug.Log("Boop");
             Move();
         }
     }

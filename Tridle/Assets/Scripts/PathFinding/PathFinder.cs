@@ -30,15 +30,19 @@ public static class PathFinder
         grid.ResetPath();
 
         openList.Add(currentNode);
-
+        Debug.Log(grid.GetNeighbours(currentNode.GetLocation())[0].GetLocation());
         while (openList.Count > 0)
         {
+            //Debug.Log("Test spot 1: " + openList.Count);
+
             openList.Sort((a, b) => a.F.CompareTo(b.F));
 
             currentNode = openList[0];
 
             if (currentNode.GetLocation() == endPoint)
+            {
                 return GetTraversedPath(currentNode);
+            }
 
             openList.Remove(currentNode);
             closedList.Add(currentNode);
@@ -48,9 +52,14 @@ public static class PathFinder
             {
                 UpdateNodeValues(neighbour, currentNode, endPoint, heuristic);
 
+                Debug.Log(neighbour.GetLocation());
                 if (!openList.Contains(neighbour))
+                {
                     openList.Add(neighbour);
+                }
             }
+
+            //Debug.Log("Test spot 2: " + openList.Count);
         }
 
         return new List<Tile>();
@@ -109,4 +118,5 @@ public static class PathFinder
         targetNode.F = targetNode.G + targetNode.H;
         targetNode.Parent = currentNode;
     }
+
 }

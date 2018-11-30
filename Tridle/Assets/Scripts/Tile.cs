@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    public Grid grid;
     public Building building;
     public float grass;
     //Shrubbery
@@ -23,7 +24,7 @@ public class Tile : MonoBehaviour
 
     public Vector2Int GetLocation()
     {
-        return new Vector2Int(0, 0);
+        return grid.FindObject(this);
     }
 
     public void UpdateGrassGrow()
