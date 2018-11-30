@@ -133,6 +133,7 @@ public class Grid : MonoBehaviour
             for (int j = 0; j < y; j++)
             {
                 _grid[i, j] = Instantiate(tilePrefab, new Vector3(i, j, 0), Quaternion.identity).AddComponent<Tile>();
+                _grid[i, j].grid = this;
                 _grid[i, j].Reset();
             }
         }
