@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid
+public class Grid : MonoBehaviour
 {
+    [SerializeField]
+    GameObject tilePrefab;
+
     private Tile[,] _grid;
 
-    public Grid(int x, int y)
+    public void Start()
     {
-        _grid = new Tile[x, y];
+        ResizeGrid(10, 10);
     }
 
 
@@ -124,10 +127,19 @@ public class Grid
     public void ResizeGrid(int x, int y)
     {
         _grid = new Tile[x, y];
+        
+        for (int i = 0; i < x; i++)
+        {
+            for (int j = 0; j < y; j++)
+            {
+                _grid[i, j] = Instantiate(tilePrefab, new Vector3(i, j, 0), Quaternion.identity).AddComponent<Tile>();
+                _grid[i, j].Reset();
+            }
+        }
     }
     public void ResizeGrid(Vector2Int size)
     {
-        _grid = new Tile[size.x, size.y];
+        ResizeGrid(size.x, size.y);
     }
 
     public Vector2Int FindPlaceable(IPlaceable placeable)

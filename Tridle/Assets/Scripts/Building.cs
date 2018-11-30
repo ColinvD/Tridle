@@ -2,46 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : IPlaceable, IHarvestable, IUpdateable
+public class Building : IHarvestable
 {
-    private IHarvestable _damageable;
-    private IPlaceable _placeable;
-    private IUpdateable _updateable;
+    public float moveDifficulty;
 
-    public Building(IHarvestable ID, IPlaceable IP, IUpdateable IU)
+    private IHarvestable _harvestable;
+
+    private Sprite[] _sprite;
+
+    public Building(IHarvestable ID, Sprite[] sprite)
     {
-        _damageable = ID;
-        _placeable = IP;
-        _updateable = IU;
+        _sprite = sprite;
+        _harvestable = ID;
     }
 
     public void Damage(float amount)
     {
-        _damageable.Damage(amount);
-    }
-
-    public float GetHealth()
-    {
-        return _damageable.GetHealth();
-    }
-
-    public float GetHealthFraction()
-    {
-        return _damageable.GetHealthFraction();
-    }
-
-    public void tick()
-    {
-        _updateable.tick();
-    }
-
-    public float GetSpeedMultiplier()
-    {
-        return _placeable.GetSpeedMultiplier();
-    }
-
-    public Vector2Int GetLocation()
-    {
-        return _placeable.GetLocation();
+        _harvestable.Damage(amount);
     }
 }

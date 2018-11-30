@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4561066162774208, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4561066162774208, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -151,6 +151,30 @@ Prefab:
     - target: {fileID: 4561066162774208, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330839736108248, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330839736108248, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330839736108248, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330839736108248, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330839736108248, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4502115485011702, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
@@ -250,7 +274,7 @@ GameObject:
   - component: {fileID: 1882131620}
   - component: {fileID: 1882131619}
   m_Layer: 0
-  m_Name: spawner
+  m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,12 +288,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1882131618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5a95da3a218a3f488ed4feaafdd9744, type: 3}
+  m_Script: {fileID: 11500000, guid: c0c81be8612c7fd44b8b6c7534a45beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 1633382049027812, guid: bd588b50114494246bb0c37ae2b692f0, type: 2}
-  width: 4
-  height: 5
+  tilePrefab: {fileID: 1814239793113084, guid: 92190bc631e2c174db91b77b15f295ac, type: 2}
 --- !u!4 &1882131620
 Transform:
   m_ObjectHideFlags: 0

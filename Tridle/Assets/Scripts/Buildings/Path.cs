@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Path : Building
 {
-    public Path(float health, float value) : base(new NonHarvestable(), new Placeable(), new NonUpdateable())
+    public Path(Sprite[] sprites) : base(new NonHarvestable(), sprites)
     {
         Debug.Log("placed a path");
     }
