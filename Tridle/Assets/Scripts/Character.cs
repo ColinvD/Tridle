@@ -30,10 +30,10 @@ public class Character : MonoBehaviour
         path = new Queue<Tile>(grid.FindPath(Vector2Int.RoundToInt(location), loc, null));
     }
 
-    public Tree FindClosestTree()
+    /*public Tree FindClosestTree()
     {
         return new Tree();
-    }
+    }*/
 
     private void Move()
     {
