@@ -142,11 +142,6 @@ public class Grid : MonoBehaviour
         ResizeGrid(size.x, size.y);
     }
 
-    public Vector2Int FindPlaceable(IPlaceable placeable)
-    {
-        return new Vector2Int(0, 0);
-    }
-
     public void ResetPath()
     {
         for (var x = 0; x < Width; x++)
