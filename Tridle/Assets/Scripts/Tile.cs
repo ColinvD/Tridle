@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    public IPlaceable placeable;
+    public Building building;
     public float grass;
-    public IPlaceable z;
-    public IUpdateable x;
     //Shrubbery
 
-    public Sprite[] sprites;
+    public Sprite sprite;
+    public Sprite[] grassSprites;
 
     public float G { get; set; }
     public float H { get; set; }

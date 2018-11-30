@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IDamageable
+public interface IHarvestable
 {
-    bool Damage(float amount);
+    void Damage(float amount);
     float GetHealth();
     float GetHealthFraction();
 }

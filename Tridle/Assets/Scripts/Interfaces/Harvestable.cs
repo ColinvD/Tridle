@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damageable : IDamageable
+public class Harvestable : IHarvestable
 {
     private float _health;
 
     private ResourceType _resource;
     private float _value;
 
-    public Damageable(float health, ResourceType resource, float value)
+    public Harvestable(float health, ResourceType resource, float value)
     {
         _value = value;
         _resource = resource;
         _health = health;
     }
 
-    public bool Damage(float amount)
+    public void Damage(float amount)
     {
         _health -= amount;
         if(_health <= 0)
@@ -24,7 +24,6 @@ public class Damageable : IDamageable
             ResourceHandler.Instance.GetResource(_resource).Amount += _value;
             //die
         }
-        return true;
     }
 
     public float GetHealth()
